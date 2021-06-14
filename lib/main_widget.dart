@@ -26,7 +26,7 @@ class _MainWidgetState extends State<MainWidget> {
       _innerTextControllers.add(controller);
     }
 
-    _scrollController = ScrollController(initialScrollOffset: 200);
+    _scrollController = ScrollController();
     _scrollController.addListener(() {
       if (_scrollController.offset > 400) {
         print("POSITION 400");
@@ -54,15 +54,7 @@ class _MainWidgetState extends State<MainWidget> {
           child: ListView(
             controller: _scrollController,
             children: [
-              Container(
-                height: 200,
-                color: Colors.teal,
-              ),
               InnerWidget(textControllers: _innerTextControllers),
-              Container(
-                height: 800,
-                color: Colors.deepPurple,
-              ),
               TextField(
                 controller: _mainTextController,
               ),
